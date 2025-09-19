@@ -12,7 +12,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen overflow-hidden pt-24 md:pt-28 pb-16">
       {/* Enhanced Background */}
       <div className="absolute inset-0 z-0">
         <img
@@ -37,9 +37,9 @@ const HeroSection = () => {
           🏕️ Premium Outdoor Adventure Experience
         </Badge>
         
-        <h1 className="text-display text-6xl md:text-8xl lg:text-9xl font-black mb-8 animate-fade-up leading-none" style={{ animationDelay: '0.1s' }}>
+        <h1 className="text-display text-6xl md:text-8xl lg:text-9xl font-black mb-6 animate-fade-up leading-[0.95]" style={{ animationDelay: '0.1s' }}>
           <span className="block text-gradient-primary">Kamp</span>
-          <span className="block -mt-4">Charlie-nae</span>
+          <span className="block">Charlie-nae</span>
         </h1>
         
         <p className="text-xl md:text-3xl lg:text-4xl mb-12 text-white/90 max-w-4xl mx-auto animate-fade-up font-light leading-relaxed" style={{ animationDelay: '0.2s' }}>
@@ -47,22 +47,22 @@ const HeroSection = () => {
         </p>
 
         {/* Event Details */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-16 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-accent/50 transition-all duration-300 hover:scale-105 group">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-8 mb-14 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-accent/50 transition-all duration-300 group">
             <Calendar className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-sm text-white/70 font-medium">Event Dates</div>
               <div className="text-lg font-bold">November 8-9, 2025</div>
             </div>
           </div>
-          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-secondary/50 transition-all duration-300 hover:scale-105 group">
+          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-secondary/50 transition-all duration-300 group">
             <MapPin className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-sm text-white/70 font-medium">Location</div>
               <div className="text-lg font-bold">Kamp Charlie-nae</div>
             </div>
           </div>
-          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-tertiary/50 transition-all duration-300 hover:scale-105 group">
+          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-tertiary/50 transition-all duration-300 group">
             <Users className="w-6 h-6 text-tertiary group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-sm text-white/70 font-medium">Community</div>
@@ -93,18 +93,18 @@ const HeroSection = () => {
         </div>
 
         {/* Pricing Preview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: '0.5s' }}>
-          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 group">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch animate-fade-up" style={{ animationDelay: '0.5s' }}>
+          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-accent/40 transition-all duration-300 h-full group flex flex-col justify-center">
             <div className="text-4xl font-display font-black text-accent mb-2 group-hover:scale-110 transition-transform">₱1,200</div>
             <div className="text-lg font-semibold text-white mb-1">Adults</div>
             <div className="text-sm text-white/70">Ages 13 & above</div>
           </div>
-          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-secondary/40 transition-all duration-300 hover:scale-105 group">
+          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-secondary/40 transition-all duration-300 h-full group flex flex-col justify-center">
             <div className="text-4xl font-display font-black text-secondary mb-2 group-hover:scale-110 transition-transform">₱600</div>
             <div className="text-lg font-semibold text-white mb-1">Children</div>
             <div className="text-sm text-white/70">Ages 5-12</div>
           </div>
-          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-tertiary/40 transition-all duration-300 hover:scale-105 group">
+          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-tertiary/40 transition-all duration-300 h-full group flex flex-col justify-center">
             <div className="text-4xl font-display font-black text-tertiary mb-2 group-hover:scale-110 transition-transform">FREE</div>
             <div className="text-lg font-semibold text-white mb-1">Little Ones</div>
             <div className="text-sm text-white/70">Under 5 years</div>
