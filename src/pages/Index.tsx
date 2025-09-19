@@ -23,21 +23,33 @@ const Index = () => {
         <ContactSection />
       </main>
       
-      {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4">Kamp Charlie-nae 2025</h3>
-          <p className="text-primary-foreground/80 mb-6">
-            An unforgettable outdoor adventure awaits • November 8-9, 2025
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm">
-            <div>© 2024 Kamp Charlie-nae. All rights reserved.</div>
-            <div className="flex gap-4">
-              <span>Privacy Policy</span>
-              <span>•</span>
-              <span>Terms of Service</span>
-              <span>•</span>
-              <span>Contact Us</span>
+      {/* Enhanced Footer */}
+      <footer className="relative overflow-hidden">
+        <div className="absolute inset-0 gradient-hero opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        
+        <div className="relative section-padding">
+          <div className="container-premium text-center text-white">
+            <h3 className="font-display text-4xl md:text-5xl font-bold mb-6 text-gradient-accent">
+              Kamp Charlie-nae 2025
+            </h3>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              Where extraordinary adventures begin and unforgettable memories are forged
+            </p>
+            
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 text-base">
+              <div className="text-white/80">© 2024 Kamp Charlie-nae. All rights reserved.</div>
+              <div className="flex flex-wrap justify-center gap-6 text-white/70">
+                <button className="hover:text-accent transition-colors duration-300">Privacy Policy</button>
+                <span className="text-white/40">•</span>
+                <button className="hover:text-secondary transition-colors duration-300">Terms of Service</button>
+                <span className="text-white/40">•</span>
+                <button className="hover:text-tertiary transition-colors duration-300">Contact Us</button>
+              </div>
+            </div>
+            
+            <div className="mt-12 pt-8 border-t border-white/20 text-sm text-white/60">
+              <p>November 8-9, 2025 • An experience beyond the ordinary</p>
             </div>
           </div>
         </div>
