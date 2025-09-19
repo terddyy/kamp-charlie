@@ -74,8 +74,15 @@ const Admin = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gradient">Kamp Charlie-nae Admin</h1>
-          <p className="text-muted-foreground mt-2">Manage event registrations and attendees</p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-bold text-gradient">Kamp Charlie-nae Admin</h1>
+              <p className="text-muted-foreground mt-2">Manage event registrations and attendees</p>
+            </div>
+            <Button variant="outline" asChild>
+              <a href="/#hero">Go to Home</a>
+            </Button>
+          </div>
         </div>
 
         {/* Stats Overview */}
