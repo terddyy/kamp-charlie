@@ -13,87 +13,112 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Enhanced Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Kamp Charlie-nae scenic campground"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-[10s] ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-secondary/60 to-tertiary/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-accent/20 rounded-full blur-xl animate-float" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-secondary/30 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-primary/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30 animate-fade-up">
-          🏕️ Outdoor Adventure Event
+      <div className="relative z-10 container-premium text-center text-white">
+        <Badge variant="secondary" className="mb-8 glass border-white/20 text-white/95 px-6 py-2 text-sm font-medium animate-fade-up hover:scale-105 transition-transform">
+          🏕️ Premium Outdoor Adventure Experience
         </Badge>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          Kamp Charlie-nae
+        <h1 className="text-display text-6xl md:text-8xl lg:text-9xl font-black mb-8 animate-fade-up leading-none" style={{ animationDelay: '0.1s' }}>
+          <span className="block text-gradient-primary">Kamp</span>
+          <span className="block -mt-4">Charlie-nae</span>
         </h1>
         
-        <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: '0.2s' }}>
-          Join us for an unforgettable outdoor adventure filled with camping, activities, and memories to last a lifetime
+        <p className="text-xl md:text-3xl lg:text-4xl mb-12 text-white/90 max-w-4xl mx-auto animate-fade-up font-light leading-relaxed" style={{ animationDelay: '0.2s' }}>
+          Immerse yourself in an <span className="text-accent font-semibold">extraordinary outdoor adventure</span> where nature meets luxury, creating memories that transcend the ordinary
         </p>
 
         {/* Event Details */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-            <Calendar className="w-5 h-5" />
-            <span className="font-medium">November 8-9, 2025</span>
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-16 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-accent/50 transition-all duration-300 hover:scale-105 group">
+            <Calendar className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
+            <div className="text-left">
+              <div className="text-sm text-white/70 font-medium">Event Dates</div>
+              <div className="text-lg font-bold">November 8-9, 2025</div>
+            </div>
           </div>
-          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-            <MapPin className="w-5 h-5" />
-            <span className="font-medium">Kamp Charlie-nae</span>
+          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-secondary/50 transition-all duration-300 hover:scale-105 group">
+            <MapPin className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform" />
+            <div className="text-left">
+              <div className="text-sm text-white/70 font-medium">Location</div>
+              <div className="text-lg font-bold">Kamp Charlie-nae</div>
+            </div>
           </div>
-          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-            <Users className="w-5 h-5" />
-            <span className="font-medium">247 Attendees</span>
+          <div className="glass flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/20 hover:border-tertiary/50 transition-all duration-300 hover:scale-105 group">
+            <Users className="w-6 h-6 text-tertiary group-hover:scale-110 transition-transform" />
+            <div className="text-left">
+              <div className="text-sm text-white/70 font-medium">Community</div>
+              <div className="text-lg font-bold">247+ Adventurers</div>
+            </div>
           </div>
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16 animate-fade-up" style={{ animationDelay: '0.4s' }}>
           <Button 
             onClick={scrollToTickets}
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg shadow-glow animate-pulse-glow"
+            variant="premium"
+            size="xl"
+            className="group relative overflow-hidden"
           >
-            Get Your Tickets Now
+            <span className="relative z-10">Reserve Your Adventure</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
           </Button>
           <Button 
-            variant="outline" 
-            size="lg"
-            className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg"
+            variant="glass" 
+            size="xl"
+            className="border-white/30 text-white hover:text-primary hover:bg-white/90"
             onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Learn More
+            Discover More
           </Button>
         </div>
 
         {/* Pricing Preview */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: '0.5s' }}>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-2xl font-bold">₱1,200</div>
-            <div className="text-sm text-white/80">Adults (13+)</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: '0.5s' }}>
+          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 group">
+            <div className="text-4xl font-display font-black text-accent mb-2 group-hover:scale-110 transition-transform">₱1,200</div>
+            <div className="text-lg font-semibold text-white mb-1">Adults</div>
+            <div className="text-sm text-white/70">Ages 13 & above</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-2xl font-bold">₱600</div>
-            <div className="text-sm text-white/80">Children (5-12)</div>
+          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-secondary/40 transition-all duration-300 hover:scale-105 group">
+            <div className="text-4xl font-display font-black text-secondary mb-2 group-hover:scale-110 transition-transform">₱600</div>
+            <div className="text-lg font-semibold text-white mb-1">Children</div>
+            <div className="text-sm text-white/70">Ages 5-12</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-2xl font-bold">FREE</div>
-            <div className="text-sm text-white/80">Under 5 years</div>
+          <div className="glass p-8 rounded-2xl border border-white/20 hover:border-tertiary/40 transition-all duration-300 hover:scale-105 group">
+            <div className="text-4xl font-display font-black text-tertiary mb-2 group-hover:scale-110 transition-transform">FREE</div>
+            <div className="text-lg font-semibold text-white mb-1">Little Ones</div>
+            <div className="text-sm text-white/70">Under 5 years</div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+      {/* Enhanced Scroll Indicator */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group" 
+           onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}>
+        <div className="glass w-8 h-14 border-2 border-white/40 rounded-full flex justify-center group-hover:border-accent/60 transition-colors">
+          <div className="w-1.5 h-4 bg-accent rounded-full mt-3 animate-pulse group-hover:bg-white transition-colors"></div>
         </div>
+        <div className="text-white/60 text-xs mt-2 font-medium group-hover:text-white transition-colors">Scroll</div>
       </div>
     </section>
   );

@@ -25,69 +25,91 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-transparent">
-      <div className="container mx-auto px-4">
-        <div className="mt-3 mb-3 rounded-xl border border-border bg-card/80 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-sm">
-          <div className="flex items-center justify-between h-14 px-3">
-          {/* Logo */}
+      <div className="container-premium">
+        <div className="mt-6 mb-6 glass-strong rounded-2xl border border-border/30 shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="flex items-center justify-between h-16 px-6">
+          {/* Enhanced Logo */}
           <button
             onClick={() => scrollToSection('#hero')}
-            className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
+            className="flex items-center space-x-3 hover:scale-105 transition-all duration-300 group"
             aria-label="Go to hero section"
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-sm">
-              <Calendar className="w-4 h-4 text-primary-foreground" />
+            <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
+              <Calendar className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-semibold text-base md:text-lg tracking-tight text-foreground">Kamp Charlie-nae</span>
+            <span className="font-display font-bold text-xl md:text-2xl tracking-tight text-foreground group-hover:text-primary transition-colors">
+              Kamp Charlie-nae
+            </span>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
+          {/* Enhanced Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navItems.map((item, index) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium hover:underline underline-offset-4 decoration-primary/50"
+                className="relative text-muted-foreground hover:text-primary transition-all duration-300 text-base font-medium group py-2"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300 rounded-full"></div>
               </button>
             ))}
-            <Button variant="outline" className="border-border/60 bg-card/40 hover:bg-card/70" asChild>
-              <Link to="/admin">Admin</Link>
+            <Button variant="glass" className="border-border/40 hover:border-primary/40" asChild>
+              <Link to="/admin">Admin Portal</Link>
             </Button>
-            <Button onClick={() => scrollToSection('#tickets')} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
-              Get Tickets
+            <Button 
+              onClick={() => scrollToSection('#tickets')} 
+              variant="premium"
+              size="lg"
+              className="shadow-glow hover:shadow-glow-accent"
+            >
+              Reserve Now
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Enhanced Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-md hover:bg-muted/50"
+            className="lg:hidden p-3 rounded-xl hover:bg-surface/50 transition-all duration-300 group"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? 
+              <X className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" /> : 
+              <Menu className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
+            }
           </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Enhanced Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4 -mt-2">
-            <div className="rounded-xl border border-border bg-card/95 backdrop-blur shadow-lg p-4 space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+          <div className="lg:hidden pb-6 -mt-2 animate-fade-up">
+            <div className="glass-strong rounded-2xl border border-border/30 shadow-2xl p-6 space-y-6">
+              <div className="space-y-4">
+                {navItems.map((item, index) => (
+                  <button
+                    key={item.label}
+                    onClick={() => scrollToSection(item.href)}
+                    className="block w-full text-left text-muted-foreground hover:text-primary transition-all duration-300 text-lg font-medium py-2 hover:pl-2"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              <div className="space-y-3 pt-4 border-t border-border/30">
+                <Button variant="glass" className="w-full border-border/40" asChild>
+                  <Link to="/admin">Admin Portal</Link>
+                </Button>
+                <Button 
+                  onClick={() => scrollToSection('#tickets')} 
+                  variant="premium"
+                  size="lg"
+                  className="w-full"
                 >
-                  {item.label}
-                </button>
-              ))}
-              <Button variant="outline" className="w-full border-border/60 bg-card/40" asChild>
-                <Link to="/admin">Admin</Link>
-              </Button>
-              <Button onClick={() => scrollToSection('#tickets')} className="w-full bg-primary text-primary-foreground">
-                Get Tickets
-              </Button>
+                  Reserve Your Spot
+                </Button>
+              </div>
             </div>
           </div>
         )}
